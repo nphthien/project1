@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LineController : MonoBehaviour
 {
-   private static float speed = 0.03f;
+   private static float speed = 0.1f;
    public static bool IsRunning {
        set{
            if(value == true){
