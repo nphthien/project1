@@ -9,7 +9,8 @@ public class ColumnController : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Bullet"){
-            Destroy(other.gameObject);
+            other.gameObject.GetComponent<BulletController>().isAvailable = true;
+            other.gameObject.SetActive(false);
             health--;
             if(health <= 0) {
                 Destroy(gameObject);

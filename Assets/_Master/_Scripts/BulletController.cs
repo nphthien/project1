@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     public float speed = 5f;
+    public bool isAvailable = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,5 +16,10 @@ public class BulletController : MonoBehaviour
     void Update()
     {
         transform.position += transform.right* Time.deltaTime * speed;
+    }
+    private void OnBecameInvisible()
+    {
+        isAvailable = true;
+        gameObject.SetActive(false);
     }
 }
